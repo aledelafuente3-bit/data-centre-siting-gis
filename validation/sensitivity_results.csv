@@ -1,0 +1,8 @@
+variant,n_eligible,spearman_rho,jaccard_top10pct
+V1_TX_cap30km,1256296,0.9146,0.529
+V2_Road_cap100km,1256296,0.993,0.8764
+V3_Heat_included,1256296,0.9843,0.7255
+V4_Slope_included,1256296,0.9766,0.7662
+V5_SFHA_5pct,1256296,1.0,1.0
+V6_EJI_pen025,1256296,0.9611,0.4757
+V7_EJI_pen075,1256296,0.6648,0.2525

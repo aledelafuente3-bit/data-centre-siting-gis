@@ -1,0 +1,114 @@
+{
+  "methodology": {
+    "source": "data_centers_7state_public_master.csv \u2014 active+under_construction, include=yes/review; all 7 study states including IA (7 active) and WV (1 active)",
+    "raster": "gric_s1_threepillar_1km.tif",
+    "random_sample": 5000,
+    "random_seed": 42,
+    "test": "Mann-Whitney U (large-sample normal approximation, two-sided)",
+    "note": "GRIC score extracted at DC point location; NoData cells excluded"
+  },
+  "sample_sizes": {
+    "dc_points_in_7_states": 1630,
+    "dc_points_with_valid_score": 1168,
+    "random_eligible_points": 5000
+  },
+  "descriptive": {
+    "dc_locations": {
+      "n": 1168,
+      "mean": 0.6314616990722206,
+      "median": 0.6083871126174927,
+      "std": 0.09416810817498637,
+      "p25": 0.5716973692178726,
+      "p75": 0.7274755239486694
+    },
+    "random_eligible": {
+      "n": 5000,
+      "mean": 0.612826149970293,
+      "median": 0.6090482771396637,
+      "std": 0.10291742938774069,
+      "p25": 0.5448447465896606,
+      "p75": 0.6888431012630463
+    },
+    "all_viable_cells": {
+      "n": 1253067,
+      "mean": 0.6123297210580687,
+      "median": 0.6099326610565186,
+      "std": 0.10444977509625727,
+      "p25": 0.54311603307724,
+      "p75": 0.6906598508358002
+    }
+  },
+  "mann_whitney": {
+    "U": 3175525.0,
+    "z_statistic": -4.663480995807409,
+    "p_value": 3.1090490908436408e-06,
+    "rank_biserial_r": 0.08750856164383558,
+    "interpretation": "positive r_rb means DC locations score higher than random eligible points"
+  },
+  "capture_rates": {
+    "gric_p50_threshold": 0.6099,
+    "gric_p75_threshold": 0.6907,
+    "gric_p90_threshold": 0.7512,
+    "pct_dcs_above_p50": 48.12,
+    "pct_dcs_above_p75": 27.05,
+    "pct_dcs_above_p90": 21.23,
+    "expected_if_random_p50": 50.0,
+    "expected_if_random_p75": 25.0,
+    "expected_if_random_p90": 10.0
+  },
+  "state_level": {
+    "spearman_rho_gric_mean_vs_dc_count": -0.7143,
+    "note": "n=7 states; Spearman rho between state mean GRIC (all viable cells) and DC count with valid score",
+    "state_detail": {
+      "AZ": {
+        "dc_count": 158,
+        "mean_gric_at_dcs": 0.5850729280257527,
+        "mean_gric_all_viable": 0.6002,
+        "difference": -0.01512707197424723,
+        "direction": "DCs score below model mean"
+      },
+      "IA": {
+        "dc_count": 22,
+        "mean_gric_at_dcs": 0.6509585353461179,
+        "mean_gric_all_viable": 0.6767,
+        "difference": -0.02574146465388205,
+        "direction": "DCs score below model mean"
+      },
+      "IL": {
+        "dc_count": 183,
+        "mean_gric_at_dcs": 0.5762543764596428,
+        "mean_gric_all_viable": 0.637,
+        "difference": -0.060745623540357174,
+        "direction": "DCs score below model mean"
+      },
+      "OR": {
+        "dc_count": 79,
+        "mean_gric_at_dcs": 0.7491112306148191,
+        "mean_gric_all_viable": 0.701,
+        "difference": 0.048111230614819145,
+        "direction": "DCs score above model mean"
+      },
+      "TX": {
+        "dc_count": 387,
+        "mean_gric_at_dcs": 0.572140062348171,
+        "mean_gric_all_viable": 0.5554,
+        "difference": 0.016740062348171048,
+        "direction": "DCs score above model mean"
+      },
+      "VA": {
+        "dc_count": 337,
+        "mean_gric_at_dcs": 0.7221838432179006,
+        "mean_gric_all_viable": 0.6497,
+        "difference": 0.07248384321790058,
+        "direction": "DCs score above model mean"
+      },
+      "WV": {
+        "dc_count": 2,
+        "mean_gric_at_dcs": 0.6780783534049988,
+        "mean_gric_all_viable": 0.6515,
+        "difference": 0.02657835340499881,
+        "direction": "DCs score above model mean"
+      }
+    }
+  }
+}

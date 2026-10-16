@@ -1,0 +1,106 @@
+{
+  "model": {
+    "name": "GRIC_S1_ThreePillar",
+    "pillar_weights": {
+      "ESI": 0.333,
+      "OFI": 0.333,
+      "SII": 0.333
+    },
+    "ESI": {
+      "weights": {
+        "water_stress_current": 0.333,
+        "nri_eal_buildings": 0.333,
+        "cmip6_heat": 0.333
+      },
+      "justification": "equal: incommensurable risk types (chronic / acute / future)",
+      "sources": {
+        "water_stress_current": "WRI Aqueduct 4.0 BWS 2010 baseline",
+        "nri_eal_buildings": "FEMA NRI 2023 EAL_SPCTL 18-hazard composite",
+        "cmip6_heat": "NEX-GDDP-CMIP6 mean days >35C 2041-2060 (normalised to 7-state max)"
+      }
+    },
+    "OFI": {
+      "weights": {
+        "tx_230kV": 0.611,
+        "ixp": 0.278,
+        "roads": 0.111
+      },
+      "justification": "ROC rank-order centroid: power > connectivity > access (literature-supported)",
+      "caps_km": {
+        "tx_230kV": 500,
+        "ixp": 500,
+        "roads": 100
+      }
+    },
+    "SII": {
+      "weights": {
+        "carbon_co2e": 0.333,
+        "eji_burden": 0.333,
+        "water_stress_future": 0.333
+      },
+      "justification": "equal: incommensurable impact types (climate / equity / hydrological) \u2014 Munda (2004)",
+      "sources": {
+        "carbon_co2e": "eGRID 2023 annual CO2e lb/MWh (inverted suitability)",
+        "eji_burden": "CDC EJI 2024 rpl_eji (inverted: 1 \u2212 burden percentile)",
+        "water_stress_future": "WRI Aqueduct 4.0 BAU 2050 projected stress (inverted)"
+      }
+    },
+    "exclusions": {
+      "pad_us_gap12": "binary = 1",
+      "nfhl_sfha": "any overlap = 1",
+      "nlcd_eligible": "< 0.10",
+      "nlcd_water": ">= 0.50"
+    }
+  },
+  "viable_cells": 1253067,
+  "exclusion_counts": {
+    "PAD-US GAP 1+2": 98394,
+    "NFHL SFHA any-overlap": 13605,
+    "NLCD eligible < 10%": 8335,
+    "NLCD water/wetland >= 50%": 322008
+  },
+  "state_means": {
+    "AZ": {
+      "ESI": 0.5014,
+      "OFI": 0.8527,
+      "SII": 0.4762,
+      "GRIC": 0.6002
+    },
+    "IL": {
+      "ESI": 0.6394,
+      "OFI": 0.8746,
+      "SII": 0.4214,
+      "GRIC": 0.637
+    },
+    "IA": {
+      "ESI": 0.6864,
+      "OFI": 0.8909,
+      "SII": 0.4714,
+      "GRIC": 0.6767
+    },
+    "OR": {
+      "ESI": 0.7091,
+      "OFI": 0.8077,
+      "SII": 0.6202,
+      "GRIC": 0.701
+    },
+    "TX": {
+      "ESI": 0.5748,
+      "OFI": 0.8308,
+      "SII": 0.3318,
+      "GRIC": 0.5554
+    },
+    "VA": {
+      "ESI": 0.6327,
+      "OFI": 0.9038,
+      "SII": 0.4292,
+      "GRIC": 0.6497
+    },
+    "WV": {
+      "ESI": 0.639,
+      "OFI": 0.8966,
+      "SII": 0.4345,
+      "GRIC": 0.6515
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "generated_from": "final three-pillar GRIC outputs only",
+  "source_project": "/Users/ale/Documents/Sustainable_Data_Center_Siting_GIS",
+  "figures": [
+    "A01_grid_carbon_suitability_FINAL.png",
+    "A02_current_and_projected_water_stress_FINAL.png",
+    "A03_exchange_proximity_suitability_FINAL.png",
+    "A04_community_burden_suitability_FINAL.png",
+    "F01_study_area_FINAL.png",
+    "F02_hard_exclusions_FINAL.png",
+    "F03_baseline_GRIC_FINAL.png",
+    "F04_pillar_comparison_FINAL.png",
+    "F05_state_GRIC_distributions_FINAL.png",
+    "F06_pillar_relationships_tradeoffs_FINAL.png",
+    "F07_CRITIC_weights_FINAL.png",
+    "F08_CRITIC_rank_and_upper_tail_stability_FINAL.png",
+    "F09_Monte_Carlo_rank_stability_FINAL.png",
+    "F10_external_spatial_concordance_FINAL.png"
+  ],
+  "retired": [
+    "F05_state_choropleth",
+    "F06_old_carbon",
+    "F10_old_facility_overlay",
+    "F11_GRIC_ge_0.70"
+  ],
+  "word_document_modified": false
+}

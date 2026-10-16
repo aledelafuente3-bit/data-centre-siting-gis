@@ -1,0 +1,194 @@
+{
+  "methodology": {
+    "CRITIC": "Diakoulaki et al. (1995) \u2014 C_j = sigma_j x sum(1 - |r_ij|); absolute correlations; viable cells with all pillar criteria non-NaN",
+    "MonteCarlo": "Dirichlet(alpha=1) uniform simplex; 1000 draws per sensitivity; Spearman rho on 50000-cell random sample of viable cells; seed=42 for reproducibility"
+  },
+  "critic": {
+    "ESI": {
+      "n_cells": 1252983,
+      "criteria": {
+        "water_current": {
+          "sigma": 0.38292,
+          "conflict": 1.861,
+          "C_j": 0.71262,
+          "w_critic": 0.4919,
+          "w_baseline": 0.3333,
+          "delta": 0.1585
+        },
+        "nri_eal": {
+          "sigma": 0.29352,
+          "conflict": 1.80383,
+          "C_j": 0.52945,
+          "w_critic": 0.3654,
+          "w_baseline": 0.3333,
+          "delta": 0.0321
+        },
+        "cmip6_heat": {
+          "sigma": 0.10747,
+          "conflict": 1.92356,
+          "C_j": 0.20673,
+          "w_critic": 0.1427,
+          "w_baseline": 0.3333,
+          "delta": -0.1906
+        }
+      },
+      "corr_matrix": {
+        "water_current": {
+          "water_current": 1.0,
+          "nri_eal": -0.1294,
+          "cmip6_heat": -0.0096
+        },
+        "nri_eal": {
+          "water_current": -0.1294,
+          "nri_eal": 1.0,
+          "cmip6_heat": -0.0668
+        },
+        "cmip6_heat": {
+          "water_current": -0.0096,
+          "nri_eal": -0.0668,
+          "cmip6_heat": 1.0
+        }
+      }
+    },
+    "OFI": {
+      "n_cells": 1252823,
+      "criteria": {
+        "tx_230kV": {
+          "sigma": 0.0719,
+          "conflict": 1.38245,
+          "C_j": 0.0994,
+          "w_critic": 0.1631,
+          "w_baseline": 0.611,
+          "delta": -0.4479
+        },
+        "ixp": {
+          "sigma": 0.26948,
+          "conflict": 1.42021,
+          "C_j": 0.38272,
+          "w_critic": 0.628,
+          "w_baseline": 0.278,
+          "delta": 0.35
+        },
+        "roads": {
+          "sigma": 0.08128,
+          "conflict": 1.56638,
+          "C_j": 0.12731,
+          "w_critic": 0.2089,
+          "w_baseline": 0.111,
+          "delta": 0.0979
+        }
+      },
+      "corr_matrix": {
+        "tx_230kV": {
+          "tx_230kV": 1.0,
+          "ixp": 0.3819,
+          "roads": 0.2357
+        },
+        "ixp": {
+          "tx_230kV": 0.3819,
+          "ixp": 1.0,
+          "roads": 0.1979
+        },
+        "roads": {
+          "tx_230kV": 0.2357,
+          "ixp": 0.1979,
+          "roads": 1.0
+        }
+      }
+    },
+    "SII": {
+      "n_cells": 1252547,
+      "criteria": {
+        "carbon_co2e": {
+          "sigma": 0.30494,
+          "conflict": 1.79541,
+          "C_j": 0.5475,
+          "w_critic": 0.337,
+          "w_baseline": 0.3333,
+          "delta": 0.0037
+        },
+        "eji": {
+          "sigma": 0.21412,
+          "conflict": 1.75701,
+          "C_j": 0.37622,
+          "w_critic": 0.2316,
+          "w_baseline": 0.3333,
+          "delta": -0.1017
+        },
+        "water_future": {
+          "sigma": 0.36596,
+          "conflict": 1.91501,
+          "C_j": 0.70081,
+          "w_critic": 0.4314,
+          "w_baseline": 0.3333,
+          "delta": 0.0981
+        }
+      },
+      "corr_matrix": {
+        "carbon_co2e": {
+          "carbon_co2e": 1.0,
+          "eji": -0.1813,
+          "water_future": -0.0233
+        },
+        "eji": {
+          "carbon_co2e": -0.1813,
+          "eji": 1.0,
+          "water_future": 0.0617
+        },
+        "water_future": {
+          "carbon_co2e": -0.0233,
+          "eji": 0.0617,
+          "water_future": 1.0
+        }
+      }
+    }
+  },
+  "monte_carlo": {
+    "MC-A": {
+      "n_valid": 1000,
+      "median_rho": 0.9625,
+      "p5_rho": 0.801,
+      "p95_rho": 0.9967,
+      "min_rho": 0.6587,
+      "pct_above_0.95": 64.0,
+      "pct_above_0.90": 81.5
+    },
+    "MC-B": {
+      "n_valid": 1000,
+      "median_rho": 0.9871,
+      "p5_rho": 0.9533,
+      "p95_rho": 0.9994,
+      "min_rho": 0.9235,
+      "pct_above_0.95": 96.0,
+      "pct_above_0.90": 100.0
+    },
+    "MC-C": {
+      "n_valid": 1000,
+      "median_rho": 0.957,
+      "p5_rho": 0.7681,
+      "p95_rho": 0.9941,
+      "min_rho": 0.6362,
+      "pct_above_0.95": 56.4,
+      "pct_above_0.90": 78.1
+    },
+    "MC-D": {
+      "n_valid": 1000,
+      "median_rho": 0.9367,
+      "p5_rho": 0.7027,
+      "p95_rho": 0.9921,
+      "min_rho": 0.4674,
+      "pct_above_0.95": 40.0,
+      "pct_above_0.90": 72.8
+    },
+    "MC-E": {
+      "n_valid": 1000,
+      "median_rho": 0.9114,
+      "p5_rho": 0.6022,
+      "p95_rho": 0.9722,
+      "min_rho": 0.3902,
+      "pct_above_0.95": 21.5,
+      "pct_above_0.90": 56.1
+    },
+    "CRITIC_vs_baseline_rho": 0.9743
+  }
+}
